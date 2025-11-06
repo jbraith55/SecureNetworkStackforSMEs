@@ -1,4 +1,5 @@
 #!/bin/bash
+#Removed some of the deny-based logic as it is done by default
 
 IP_LAN="192.168.10.1/24"
 IP_DMZ="192.168.30.1/24"
@@ -107,7 +108,7 @@ table inet filter {
 
         tcp flags syn ct state new log prefix "SYN_SCAN_DROP " counter
 
-#       ip saddr @DENY_L drop
+#       ip saddr @DENY_L drop 
 
         log prefix "FW_FORWARD_DROP " counter
         drop
