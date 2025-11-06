@@ -1,6 +1,7 @@
 # SecureNetworkStackforSMEs
 A Foundational secure stack designed for SMEs to provide baseline seturity when designing their network's architecture.
-This is implemented across a LAN, DMZ and External network,with features including a Firewall, OpenVPN setup and internal DNSSEC.
+This is implemented across LAN, DMZ, and external segments, with features including a firewall on the gateway, OpenVPN for remote access, and an internal DNS server.
+All firewall packages sit on the firewall server (Firewall folder and FirewallSetup.sh). DMTestWebServer.sh sits on the DMZ Server. DNSSetup.sh sits on the DNS server, connected to the switch. The OpenvpnServer.sh is on the VPN server, OpenVPCClient.sh on the LAN clients.
 
 Except for the firewall, other devices within this implementation require manual IP configuration. This can be done within managing the network settings through the UI on each device orthrough setting an IP to each interface:
 For example the following IPs would be used for the DMZ host setup:
